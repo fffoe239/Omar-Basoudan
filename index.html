@@ -9,14 +9,8 @@
   <body>
     <div class="game-shell">
       <div class="hud">
-        <div class="hud-item">
-          <span class="label">المرحلة</span>
-          <span id="stageLabel">1 / 100</span>
-        </div>
-        <div class="hud-item">
-          <span class="label">الوضع</span>
-          <span id="statusLabel">جاهز</span>
-        </div>
+        <div class="hud-item"><span class="label">المرحلة</span><span id="stageLabel">1 / 100</span></div>
+        <div class="hud-item"><span class="label">الوضع</span><span id="statusLabel">جاهز</span></div>
       </div>
 
       <canvas id="gameCanvas" width="1100" height="500"></canvas>
@@ -25,15 +19,16 @@
         <div class="panel">
           <h1>لعبة الجري والقفز</h1>
           <p>قفز فوق الحواجز ولا تلمسها.</p>
-          <p>كل مرحلة أصعب من السابقة.</p>
+          <p>اضغط زر القفز مرتين للدبل نط.</p>
           <button id="startBtn">ابدأ</button>
         </div>
       </div>
 
+      <button id="jumpBtn" class="jump-button" type="button" aria-label="قفز">قفز<br><small>دبل نط</small></button>
       <div id="messageBox" class="message-box">استعد</div>
       <div class="copyright">© 2026 عمر باسودان. جميع الحقوق محفوظة.</div>
     </div>
-
     <script src="script.js"></script>
+    <script src="controls.js"></script>
   </body>
 </html>
