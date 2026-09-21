@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(#0a162b, #1d3557 40%, #6f8faf 100%);
+  font-family: Tahoma, Arial, sans-serif;
+  color: #fff;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-shell {
+  position: relative;
+  width: min(100vw, 1100px);
+  height: min(100vh, 620px);
+  margin: 0 auto;
+  border: 4px solid rgba(255,255,255,0.18);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.2);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+}
+
+#gameCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#9cc6ff, #d9ecff 45%, #eef6ff 100%);
+  image-rendering: auto;
+}
+
+.hud {
+  position: absolute;
+  top: 18px;
+  inset-inline: 20px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 12;
+  pointer-events: none;
+}
+
+.hud-item {
+  background: rgba(10, 18, 30, 0.65);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 8px 16px;
+  min-width: 160px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+#stageLabel, #statusLabel {
+  display: block;
+  margin-top: 4px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 18, 30, 0.62);
+  z-index: 15;
+}
+
+.overlay.visible {
+  display: flex;
+}
+
+.panel {
+  width: min(80%, 480px);
+  padding: 30px 26px;
+  border-radius: 18px;
+  background: rgba(240, 248, 255, 0.12);
+  border: 2px solid rgba(255,255,255,0.22);
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  backdrop-filter: blur(4px);
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: clamp(28px, 4vw, 38px);
+}
+
+.panel p {
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+button {
+  margin-top: 18px;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0b1b2f;
+  background: linear-gradient(#ffe082, #ffb74d);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.message-box {
+  position: absolute;
+  right: 50%;
+  top: 90px;
+  transform: translateX(50%);
+  background: rgba(15, 23, 42, 0.8);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  z-index: 16;
+  border: 1px solid rgba(255,255,255,0.18);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.message-box.visible {
+  opacity: 1;
+}
+
+.copyright {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  z-index: 13;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  letter-spacing: 0.4px;
+}
+
+@media (max-width: 720px) {
+  .hud {
+    inset-inline: 10px;
+  }
+
+  .hud-item {
+    min-width: 120px;
+    padding: 8px 10px;
+  }
+
+  #stageLabel, #statusLabel {
+    font-size: 16px;
+  }
+
+  .panel {
+    width: min(88%, 420px);
+  }
+}

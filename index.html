@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لعبة الجري والقفز</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-shell">
+      <div class="hud">
+        <div class="hud-item">
+          <span class="label">المرحلة</span>
+          <span id="stageLabel">1 / 100</span>
+        </div>
+        <div class="hud-item">
+          <span class="label">الوضع</span>
+          <span id="statusLabel">جاهز</span>
+        </div>
+      </div>
+
+      <canvas id="gameCanvas" width="1100" height="500"></canvas>
+
+      <div id="startOverlay" class="overlay visible">
+        <div class="panel">
+          <h1>لعبة الجري والقفز</h1>
+          <p>قفز فوق الحواجز ولا تلمسها.</p>
+          <p>كل مرحلة أصعب من السابقة.</p>
+          <button id="startBtn">ابدأ</button>
+        </div>
+      </div>
+
+      <div id="messageBox" class="message-box">استعد</div>
+      <div class="copyright">© 2026 عمر باسودان. جميع الحقوق محفوظة.</div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
