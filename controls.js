@@ -1,11 +1,1 @@
-const jumpButton = document.getElementById('jumpBtn');
-
-function pressJump(event) {
-  event.preventDefault();
-  if (typeof window.triggerJump === 'function') {
-    window.triggerJump();
-  }
-}
-
-jumpButton.addEventListener('pointerdown', pressJump, { passive: false });
-jumpButton.addEventListener('contextmenu', event => event.preventDefault());
+const jumpButton=document.getElementById('jumpBtn');jumpButton.addEventListener('pointerdown',e=>{e.preventDefault();if(typeof window.triggerJump==='function')window.triggerJump()},{passive:false});jumpButton.addEventListener('contextmenu',e=>e.preventDefault());
